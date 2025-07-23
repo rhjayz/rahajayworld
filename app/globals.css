@@ -10,7 +10,8 @@
 
 html, body {
   scrollbar-width: thin;
-  scrollbar-color: #4F46E5 #000; /* Thumb dan track */
+  scrollbar-color: #4F46E5 #000; 
+  overflow: hidden;/* Thumb dan track */
 
   /* Scrollbar untuk WebKit (Chrome, Edge, Safari) */
 }
@@ -129,3 +130,6 @@ body {
   scrollbar-color: rgba(255,255,255,0.2) transparent;
 }
 
+.pixelated {
+  image-rendering: pixelated;
+}

@@ -48,14 +48,16 @@ const GlassIcons: React.FC<GlassIconsProps> = ({ items, className }) => {
       >
         {items.map((item, index) => (
           <motion.div
-            initial={{ scale: 0.3, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
+            key={index}
+            initial={{ scale: 0.3, opacity: 0, y: 50 }} // kondisi awal
+            whileInView={{ scale: 1, opacity: 1, y: 0 }} // kondisi ketika elemen terlihat
             transition={{
               type: "spring",
               stiffness: 400,
               damping: 20,
-              delay: 1,
+              delay: 0.1 * index, // kalau mau kasih delay bertahap per item
             }}
+            viewport={{ once: true, amount: 0.3 }} // hanya sekali, ketika 30% elemen terlihat
           >
             <button
               key={index}

@@ -14,9 +14,6 @@ import ContactSection from "./components/ContactSection/ContactSection";
 import AI from "./components/AI/Index";
 import { motion } from "framer-motion";
 import { FaRegFile } from "react-icons/fa";
-import { GrProjects } from "react-icons/gr";
-import { SiHyperskill } from "react-icons/si";
-import { GrContact } from "react-icons/gr";
 import { useState } from "react";
 
 export default function Home() {
@@ -31,11 +28,14 @@ export default function Home() {
     { icon: "wordpress", title: "Wordpress" },
     { icon: "icons8-elementor", title: "Elementor" },
     { icon: "bootstrap", title: "Bootstrap" },
+    { icon: "Materialize", title: "Materialize" },
     { icon: "bulma", title: "Bulma" },
     { icon: "tailwind-css", title: "Tailwind" },
     { icon: "codeigniter-plain", title: "Code Igniter 3" },
     { icon: "laravel", title: "Laravel" },
     { icon: "Lumen", title: "Lumen" },
+    { icon: "Go", title: "Go" },
+    { icon: "Flutter", title: "Flutter" },
     { icon: "jquery-plain", title: "Jquery" },
     { icon: "icons8-vite", title: "Vite" },
     { icon: "react", title: "React Js" },
@@ -45,11 +45,13 @@ export default function Home() {
     { icon: "typescript-icon", title: "Typescript" },
     { icon: "icons8-prisma-orm", title: "Prisma ORM" },
     { icon: "sequelize", title: "Sequelize ORM" },
-    { icon: "mysql-original-wordmark", title: "MY SQL" },
+    { icon: "mysql-original-wordmark", title: "MySQL" },
+    { icon: "PostgresSQL", title: "PostgresSQL" },
     { icon: "figma", title: "Figma" },
     { icon: "icons8-json-web-token", title: "JWT" },
     { icon: "icons8-git", title: "GIT" },
     { icon: "google-cloud", title: "Google Cloud" },
+    { icon: "Docker", title: "Docker" },
     { icon: "icons8-apache-netbeans", title: "Netbeans" },
     { icon: "icons8-java", title: "Java" },
   ];
@@ -102,6 +104,7 @@ export default function Home() {
               <div className="relative ml-[10vh] mt-2 md-6 font-silkscreen">
                 <motion.div
                   initial={{ scale: 0.3, opacity: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{
                     type: "spring",
@@ -124,14 +127,21 @@ export default function Home() {
                 className="relative mr-20"
               >
                 <br />
+
                 <GlassIcons items={items} className="font-jersey10" />
               </div>
             </div>
             <div className="col-span-6 relative">
               <motion.div
-                initial={{ scale: 0.3, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ type: "spring", stiffness: 400, damping: 20 }}
+                initial={{ scale: 0.3, opacity: 0, y: 50 }} // kondisi awal
+                whileInView={{ scale: 1, opacity: 1, y: 0 }} // kondisi ketika elemen terlihat
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 20,
+                  delay: 0.1, // kalau mau kasih delay bertahap per item
+                }}
+                viewport={{ once: true, amount: 0.3 }} // hanya sekali, ketika 30% elemen terlihat
               >
                 <img
                   src="/assets/rj.png"
@@ -326,84 +336,99 @@ export default function Home() {
                   className="custom-pixel-card"
                 />
               </motion.div>
-              <p className="mt-2">Connect with me:</p>
-              <div className="flex flex-wrap mt-2 gap-4 md:gap-6">
-                <FlowbiteTooltip content="Linkedin">
-                  <a
-                    href="https://www.linkedin.com/in/muhammad-fikri-bima-nugraha"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-transparent hover:bg-gray-900 transition-all duration-300 cursor-pointer group">
-                      <img
-                        src={"assets/icon/linkedin.png"}
-                        alt="Linkedin"
-                        className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-300"
-                      />
-                    </div>
-                  </a>
-                </FlowbiteTooltip>
-                <FlowbiteTooltip content="Github">
-                  <a
-                    href="https://github.com/rhjayz"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-transparent hover:bg-gray-100 transition-all duration-300 cursor-pointer group">
-                      <img
-                        src={"assets/icon/github.png"}
-                        alt="Github"
-                        className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-300"
-                      />
-                    </div>
-                  </a>
-                </FlowbiteTooltip>
-                <FlowbiteTooltip content="Whatsapp">
-                  <a
-                    href="https://wa.me/6285179561300"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-transparent hover:bg-gray-100 transition-all duration-300 cursor-pointer group">
-                      <img
-                        src={"assets/icon/whatsapp.png"}
-                        alt="Whatsapp"
-                        className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-300"
-                      />
-                    </div>
-                  </a>
-                </FlowbiteTooltip>
-                <FlowbiteTooltip content="Gmail">
-                  <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=fikribima123@gmail.com&su=Halo&body=Saya%20ingin%20bertanya%20tentang%20.."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-transparent hover:bg-gray-100 transition-all duration-300 cursor-pointer group">
-                      <img
-                        src={"assets/icon/message.png"}
-                        alt="Gmail"
-                        className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-300"
-                      />
-                    </div>
-                  </a>
-                </FlowbiteTooltip>
-                <FlowbiteTooltip content="Youtube">
-                  <a
-                    href="https://www.youtube.com/@bimacos8355"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <div className="w-12 h-12 rounded-full overflow-hidden bg-transparent hover:bg-gray-100 transition-all duration-300 cursor-pointer group">
-                      <img
-                        src={"assets/icon/youtube.png"}
-                        alt="Youtube"
-                        className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-300"
-                      />
-                    </div>
-                  </a>
-                </FlowbiteTooltip>
-              </div>
+              <motion.span
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true, amount: 0.3 }}
+                className="mt-2"
+              >
+                Connect with me:
+              </motion.span>
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true, amount: 0.3 }}
+              >
+                <div className="flex flex-wrap mt-2 gap-4 md:gap-6">
+                  <FlowbiteTooltip content="Linkedin">
+                    <a
+                      href="https://www.linkedin.com/in/muhammad-fikri-bima-nugraha"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <div className="w-12 h-12 rounded-full overflow-hidden bg-transparent hover:bg-gray-900 transition-all duration-300 cursor-pointer group">
+                        <img
+                          src={"assets/icon/linkedin.png"}
+                          alt="Linkedin"
+                          className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-300"
+                        />
+                      </div>
+                    </a>
+                  </FlowbiteTooltip>
+                  <FlowbiteTooltip content="Github">
+                    <a
+                      href="https://github.com/rhjayz"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <div className="w-12 h-12 rounded-full overflow-hidden bg-transparent hover:bg-gray-100 transition-all duration-300 cursor-pointer group">
+                        <img
+                          src={"assets/icon/github.png"}
+                          alt="Github"
+                          className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-300"
+                        />
+                      </div>
+                    </a>
+                  </FlowbiteTooltip>
+                  <FlowbiteTooltip content="Whatsapp">
+                    <a
+                      href="https://wa.me/6285179561300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <div className="w-12 h-12 rounded-full overflow-hidden bg-transparent hover:bg-gray-100 transition-all duration-300 cursor-pointer group">
+                        <img
+                          src={"assets/icon/whatsapp.png"}
+                          alt="Whatsapp"
+                          className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-300"
+                        />
+                      </div>
+                    </a>
+                  </FlowbiteTooltip>
+                  <FlowbiteTooltip content="Gmail">
+                    <a
+                      href="https://mail.google.com/mail/?view=cm&fs=1&to=fikribima123@gmail.com&su=Halo&body=Saya%20ingin%20bertanya%20tentang%20.."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <div className="w-12 h-12 rounded-full overflow-hidden bg-transparent hover:bg-gray-100 transition-all duration-300 cursor-pointer group">
+                        <img
+                          src={"assets/icon/message.png"}
+                          alt="Gmail"
+                          className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-300"
+                        />
+                      </div>
+                    </a>
+                  </FlowbiteTooltip>
+                  <FlowbiteTooltip content="Youtube">
+                    <a
+                      href="https://www.youtube.com/@bimacos8355"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <div className="w-12 h-12 rounded-full overflow-hidden bg-transparent hover:bg-gray-100 transition-all duration-300 cursor-pointer group">
+                        <img
+                          src={"assets/icon/youtube.png"}
+                          alt="Youtube"
+                          className="w-full h-full object-cover filter grayscale group-hover:grayscale-0 transition duration-300"
+                        />
+                      </div>
+                    </a>
+                  </FlowbiteTooltip>
+                </div>
+              </motion.div>
             </div>
             <div className="col-span-6 pr-32 rounded-lg shadow-lg font-silkscreen">
               <motion.div

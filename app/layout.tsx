@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Staatliches, Carme, Honk, Silkscreen, Jersey_10, Sankofa_Display, Climate_Crisis} from 'next/font/google'
+import {
+  Staatliches,
+  Carme,
+  Honk,
+  Silkscreen,
+  Jersey_10,
+  Sankofa_Display,
+  Climate_Crisis,
+} from "next/font/google";
 import "./globals.css";
-import 'flowbite';
+import "flowbite";
+import Loading from "./components/Loading/Loading";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,9 +25,9 @@ const geistMono = localFont({
 });
 
 const staatliches = Staatliches({
-  subsets: ['latin'],
-  weight: '400', // satu-satunya weight yang tersedia
-  variable: '--font-staatliches',
+  subsets: ["latin"],
+  weight: "400", // satu-satunya weight yang tersedia
+  variable: "--font-staatliches",
 });
 
 const carme = Carme({
@@ -30,7 +39,7 @@ const carme = Carme({
 const honk = Honk({
   weight: "400",
   subsets: ["latin"],
-  display: 'swap' ,
+  display: "swap",
   variable: "--font-honk",
 });
 
@@ -43,7 +52,7 @@ const silkscreen = Silkscreen({
 const jersey10 = Jersey_10({
   weight: "400",
   subsets: ["latin"],
-  display: 'swap' ,
+  display: "swap",
   variable: "--font-jersey10",
 });
 
@@ -63,8 +72,8 @@ export const metadata: Metadata = {
   title: "Bima's Portofolio",
   description: "Welcome to my world",
   icons: {
-    icon:"/assets/rj.ico",
-  }
+    icon: "/assets/rj.ico",
+  },
 };
 
 export default function RootLayout({
@@ -77,7 +86,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${cc.variable} ${jersey10.variable} ${sankofa.variable} ${silkscreen.variable} ${geistMono.variable} ${staatliches.variable} ${carme.variable} ${honk.variable} antialiased`}
       >
-        {children}
+        <Loading>{children}</Loading>
       </body>
     </html>
   );
