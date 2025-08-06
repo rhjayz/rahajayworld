@@ -64,7 +64,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen overflow-x-hidden w-full scrollbar-pixel bg-[#4F46E5]">
+    <div className="min-h-screen overflow-x-hidden w-screen w-full scrollbar-pixel bg-[#4F46E5]">
       <AI />
       <video
         autoPlay
