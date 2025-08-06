@@ -64,7 +64,7 @@ export default function Home() {
   }
 
   return (
-    <div className="min-h-screen overflow-x-hidden mx-auto scrollbar-pixel bg-[#4F46E5]">
+    <div className="min-h-screen overflow-x-hidden w-full scrollbar-pixel bg-[#4F46E5]">
       <AI />
       <video
         autoPlay
@@ -77,7 +77,7 @@ export default function Home() {
       >
         <source src="/assets/citylight.mp4" type="video/mp4" />
       </video>
-      <div className="container max-w-screen-xl relative z-10">
+      <div className="w-full relative z-10">
         {/* SECTION PRIMARY */}
         <section className="primary">
           <div className="grid grid-cols-12 ">
