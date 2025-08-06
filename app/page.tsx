@@ -36,6 +36,7 @@ export default function Home() {
     { icon: "Lumen", title: "Lumen" },
     { icon: "Go", title: "Go" },
     { icon: "Flutter", title: "Flutter" },
+    { icon: "python", title: "Python" },
     { icon: "jquery-plain", title: "Jquery" },
     { icon: "icons8-vite", title: "Vite" },
     { icon: "react", title: "React Js" },
@@ -76,7 +77,7 @@ export default function Home() {
       >
         <source src="/assets/citylight.mp4" type="video/mp4" />
       </video>
-      <div className="container relative z-10">
+      <div className="container max-w-screen-xl relative z-10">
         {/* SECTION PRIMARY */}
         <section className="primary">
           <div className="grid grid-cols-12 ">
@@ -158,8 +159,8 @@ export default function Home() {
           </div>
         </section>
         {/* SECTION SKILL */}
-        <section className="Skills">
-          <div className="grid grid-cols-12 z-10 text-white bg-[#1b0f21] w-full h-full">
+        <section className="Skills z-10 text-white bg-[#1b0f21]">
+          <div className="grid grid-cols-12 w-full h-full">
             <div className="col-span-12">
               <div className="mt-15">
                 <br />
@@ -249,8 +250,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="Project">
-          <div className="grid grid-cols-12 mx-auto px-auto text-white bg-[#4F46E5]">
+        <section className="Project mx-auto px-auto text-white bg-[#4F46E5]">
+          <div className="grid grid-cols-12">
             <div className="col-span-10 col-start-2 font-jersey10">
               <br />
               <motion.div
@@ -268,8 +269,8 @@ export default function Home() {
         <div className="col-span-12 bg-[#4F46E5] bg-gradient-to-t from-[#1b0f21] via-[#1b0f21]/20 to-transparent ">
           <br />
         </div>
-        <section className="Contact">
-          <div className="grid grid-cols-12 text-white bg-[#1b0f21] mx-auto px-auto ">
+        <section className="Contact text-white bg-[#1b0f21] mx-auto px-auto">
+          <div className="grid grid-cols-12 ">
             <div className="col-span-12 mx-auto px-auto">
               <div className="mt-5"></div>
               <br />
