@@ -10,8 +10,10 @@ export default function Loading({ children }: { children: React.ReactNode }) {
       document.body.style.overflow = "hidden";
       document.documentElement.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto";
-      document.documentElement.style.overflow = "auto   ";
+      document.documentElement.style.overflowX = "hidden";
+      document.body.style.overflowX = "hidden";
+      document.body.style.overflowY = "auto";
+      document.documentElement.style.overflowY = "auto";
     }
   }, [isLoading]);
   useEffect(() => {

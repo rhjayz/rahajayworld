@@ -250,8 +250,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="Project mx-auto px-auto text-white bg-[#4F46E5]">
-          <div className="grid grid-cols-12">
+        <section className="Project  text-white bg-[#4F46E5]">
+          <div className="grid grid-cols-12 px-5">
             <div className="col-span-10 col-start-2 font-jersey10">
               <br />
               <motion.div
